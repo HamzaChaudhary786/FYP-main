@@ -35,13 +35,15 @@ const Navbar = () => {
                 },
             ]
         },
+
         {
             name: "Developers", link: "/aboutus",
         },
 
         {
             name: "Sign in", link: "/signin"
-        }
+        },
+
     ];
     let [open, setOpen] = useState(false);
     const { query, setQuery } = useGlobalContext();
@@ -49,12 +51,15 @@ const Navbar = () => {
     // const [dropdown, setDropDown] = useState(false);
     return (
         <>
-            <div className=' shadow-md w-full top-0 left-0 '>
-                <div className=' md:flex  py-1 bg-gray-800 md:px-10 px-7 h-fit  items-center justify-between '>
-                    <div className=' h-4 w-24 mb-10 cursor-pointer'>
+            <div className=' shadow-md w-full top-0  bg-gray-800 left-0 border border-green-500  hover:shadow-md  hover:shadow-indigo-700 hover:border hover:border-indigo-700'>
+
+                <div className=' w-full flex items-center justify-items-center  p-5 py-2 lg:px-10  h-auto   md:p-2    md:justify-between   lg:w-screen lg:justify-between '>
+
+
+                    <div className=' h-4 w-24 mb-10 cursor-pointer md:h-4 md:w-16 grid sm:items-center sm:justify-center '>
                         <Link to='/'>
-                            <span className=' text-3xl text-indigo-600 mr-1 mt-2'>
-                                <img src={logo} alt="Logo" />
+                            <span className=' text-3xl text-indigo-600 mr-1 mt-2 md:mr-0'>
+                                <img src={logo} className="md:mt-3 " alt="Logo" />
                             </span>
                         </Link>
                     </div>
@@ -64,28 +69,30 @@ const Navbar = () => {
                     </div>
 
 
-                        {/* Search Section */}
+                    {/* Search Section */}
 
 
 
-                    <div className='ml-[120px]  lg:ml-[150px] -mt-12 mr-2 md:mr-0 md:ml-0 md:mt-0 rounded-full border  hover:border-green-400 hover:border-2 items-center  cursor-pointer bg-white flex w-fit h-fit '>
-                        <span className='m-2  grid items-center '><ion-icon name="search-outline"></ion-icon></span>
-                        <input type="text" placeholder=" Search Here" className=' w-[180px] h-[28px] rounded-lg  outline-none border-none md:w-[200px] md:h-[30px] md:rounded-xl'
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)}
-                        />
+                    <div className=' ml-6 lg:mr-0 md:ml-2 lg:mt-0 rounded-full border  hover:border-green-400 hover:border-2 items-center  cursor-pointer bg-white flex w-fit h-fit  lg:h-auto lg:w-auto  '>
+
+                        <div className='m-2  grid items-center '><ion-icon name="search-outline"></ion-icon></div>
+                        <div>
+                            <input type="text" placeholder=" Search Here" className=' w-[180px] h-[28px]  rounded-lg  outline-none border-none lg:w-[200px] md:w-[130px] md:h-[28px] lg:rounded-xl'
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)} />
+                        </div>
+
+
+
                     </div>
 
-
-
-
-                    <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-gray-800 h-80 w-full left-0 md:w-auto md:h-auto md:pl-0 pl-9 transition-all duration-700 ease-in ${open ? 'top-[60px] opacity-100' : 'top-[-490px]'} md:opacity-100 `}>
+                    <ul className={`md:flex md:items-center   md:pb-0 pb-12 absolute md:static bg-gray-800 h-80 w-full left-0 md:w-auto md:h-auto md:pl-0  transition-all duration-700 ease-in ${open ? 'top-[60px] opacity-100' : 'top-[-490px]'} md:opacity-100 `}>
                         {
                             Links.map((item) => {
                                 return (
                                     <>
-                                        <li key={item.name} className=" md:ml-8  text-xl md:my-0 my-4 w-fit group">
-                                            <a href={item.link} className='text-white hover:text-green-500  duration-500 '>{item.name}</a>
+                                        <li key={item.name} className="  text-center text-lg md:my-0 my-4 w-fit group pl-7 md:pl-2 md:ml-2   ">
+                                            <Link to={item.link} className='text-white hover:text-green-500  duration-500 md:text-lg   lg:text-lg lg:p-4  '>{item.name}</Link>
                                             {
                                                 item.submenu && <div>
                                                     <div className=''>

@@ -51,7 +51,7 @@ const Cancer_Navbar = () => {
 
     return (
         <>
-            <div className=' shadow-md w-full top-0 left-0 '>
+            <div className=' shadow-md w-full top-0 left-0 border border-green-500 hover:shadow-md  hover:shadow-indigo-700 hover:border hover:border-indigo-700'>
                 <div className=' md:flex  py-1 bg-gray-800 md:px-10 px-7 h-fit  items-center justify-between '>
                     <div className=' h-4 w-24 mb-10 cursor-pointer'>
                         <Link to='/'>

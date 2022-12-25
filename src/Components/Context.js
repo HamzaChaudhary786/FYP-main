@@ -10,6 +10,8 @@ const AppProvider = (({ children }) => {
 
     const [fund, setFund] = useState([]);
     const[money , setMoney]=useState([]);
+    const [cancer , setCancer]=useState([]);
+    const[crypto , setCrypto]=useState([]);
     const [query , setQuery]=useState("bussiness");
     const[query_cancer , setQuery_Cancer]=useState("cancer");
 
@@ -23,6 +25,8 @@ const AppProvider = (({ children }) => {
             if (data.Response === "True") {
                 setFund(data.Search);
                 setMoney(data.Recived_Dollar)
+                setCancer(data.Cancers)
+                setCrypto(data.CryptoData)
 
             }
             else {
@@ -44,16 +48,16 @@ const AppProvider = (({ children }) => {
         let timerOut=setTimeout(()=>{
             getProject(`${api_url}`);
 
-        },2000);
+        },3000);
         
-
-    }, [query , query_cancer])
+        return ()=> clearTimeout(timerOut);
+    }, [query , query_cancer]);
 
 
 
 
     return (
-        <ContextApp.Provider value={{ fund ,money,query , setQuery ,query_cancer , setQuery_Cancer }}>
+        <ContextApp.Provider value={{ fund ,money,query , setQuery ,query_cancer , setQuery_Cancer , cancer ,  crypto}}>
             {children}
         </ContextApp.Provider>
     )

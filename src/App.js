@@ -9,12 +9,14 @@ import SingleFlood from './Components/SingleFlood';
 import Sign_In from './Pages/Sign_In';
 import Sign_Up from './Pages/Sign_Up';
 import Cancer from './Pages/Cancer';
+import Term_Services from './Pages/Term_Services';
 
 
 function App() {
   return (
     <>
-    <Routes>
+    
+    <Routes >
       <Route path='/' element={<Home/>}/>
       <Route path='/aboutus' element={<About/>}/>
       <Route path='/aboutdescription' element={<DeveloperAbout/>}/>
@@ -23,6 +25,7 @@ function App() {
       <Route path ='/signin' element={<Sign_In/>}/>
       <Route path ='/signup' element={<Sign_Up/>}/>
       <Route path ='/cancer' element={<Cancer/>}/>
+      <Route path ='/termservices' element={<Term_Services/>}/>
       
 
 

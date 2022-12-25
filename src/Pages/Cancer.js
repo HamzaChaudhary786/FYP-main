@@ -6,9 +6,12 @@ import Footer from '../Components/Footer'
 const Cancer = () => {
   return (
     <>
-    <Cancer_Navbar/>
-    <Cancer_Hero_Section/>
-    <Footer/>
+      <div className='bg-slate-900'>
+        <Cancer_Navbar />
+        <Cancer_Hero_Section />
+        <Footer />
+      </div>
+
     </>
   )
 }
