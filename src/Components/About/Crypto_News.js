@@ -31,7 +31,7 @@ const Crypto_News = () => {
                             const { title, day, poster, description, link } = crypto;
                             return (
                                 <>
-                                    <a href={link}>
+                                    <a href={link} target="_blank">
                                         <div className='bg-gray-800 flex h-40 w-96 rounded-xl  items-center duration-700 cursor-pointer  hover:scale-105 mt-4 '>
                                             <div className='flex p-6'>
                                                 <div>

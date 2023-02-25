@@ -12,6 +12,7 @@ const AppProvider = (({ children }) => {
     const[money , setMoney]=useState([]);
     const [cancer , setCancer]=useState([]);
     const[crypto , setCrypto]=useState([]);
+    const[stat , setStat]=useState([]);
     const [query , setQuery]=useState("bussiness");
     const[query_cancer , setQuery_Cancer]=useState("cancer");
 
@@ -27,6 +28,7 @@ const AppProvider = (({ children }) => {
                 setMoney(data.Recived_Dollar)
                 setCancer(data.Cancers)
                 setCrypto(data.CryptoData)
+                setStat(data.Stat);
 
             }
             else {
@@ -57,7 +59,7 @@ const AppProvider = (({ children }) => {
 
 
     return (
-        <ContextApp.Provider value={{ fund ,money,query , setQuery ,query_cancer , setQuery_Cancer , cancer ,  crypto}}>
+        <ContextApp.Provider value={{ fund ,money,query , setQuery ,query_cancer , setQuery_Cancer , cancer ,  crypto , stat}}>
             {children}
         </ContextApp.Provider>
     )

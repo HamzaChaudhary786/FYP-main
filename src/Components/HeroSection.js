@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useGlobalContext } from './Context'
 import charity from '../Assets/charity.png'
 import { Link } from 'react-router-dom'
+import Total_Donation from './Total_Donation'
 
 
 
@@ -13,77 +14,48 @@ const HeroSection = () => {
 
     return (
         <>
-            <div className='bg-gray-900 pb-8 '>
-                <div className='w-full lg:h-screen  lg:w-full  text-white  '>
-                    <div className=' grid grid-cols-1  h-fit  lg:grid lg:grid-cols-2 lg:h-[450px] '>
-                        <div className=' grid justify-items-center items-center '>
-                            <section className='p-12 pb-0 lg:p-12 grid  items-center   '>
+            <div className=' h-auto w-auto  '>
+                <div className='imageSlider w-screen  h-auto lg:h-screen  lg:w-full  text-white  '>
+                    <div className=' grid grid-cols-1  h-fit md:h-fit  md:grid-cols-2  lg:grid lg:grid-cols-2 lg:h-[450px] '>
+                        <div className=' grid justify-items-center '>
+                            <section className='  p-4 md:p-12 lg:p-12  grid  items-center h-fit pb-0  '>
                                 <h1 className=' text-4xl font-bold lg:font-bold lg:text-5xl h-auto lg:w-48'>Need To Help,</h1>
-                                <h1 className=' text-4xl font-bold mt-4 lg:font-bold lg:text-5xl lg:h-auto lg:mt-4  ' ><span className='text-green-500'>The  </span><span className=' text-green-500'>Needy</span></h1>
-                                <strong className=' mt-4 lg:mt-4 '> We Need Your Help To Save People Of Sindh And Near By Area's That Have Been Affected By The Devastating Effects Of Climate Change. Donate Today. Each Penny Account</strong>
+                                <h1 className=' text-4xl font-bold mt-4 lg:font-bold lg:text-5xl lg:h-auto lg:mt-4  ' ><span className='text-green-500'>The Needy</span></h1>
+                                <strong className=' mt-4 lg:mt-4 '> We Need Your Help To Save People Of Sindh And Near By Area's That Have Been Affected By The Devastating Effects Of 
+                                Climate Change. Donate Today. Each Penny Account</strong>
 
                             </section>
                         </div>
                         <div className=' grid justify-items-center items-start'>
-                            <img src={charity} className=" h-[350px] w-[350px] lg:h-[450px] lg:w-[450px] " />
+                            <img src={charity} className=" h-[330px] w-[330px] lg:h-[450px] lg:w-[450px] " />
                         </div>
-                        <div className='lg:w-screen grid justify-items-center'>
+
+                        <div className='w-screen grid justify-items-center -mt-2 md:-mt-0 lg:-mt-0 '>
                             <button className=' p-2 h-12 w-44  text-center border-emerald-500 lg:h-16 lg:w-64 bg-red-500 lg:p-3 rounded-full shadow-gray-500 lg:shadow-md text-white lg:text-3xl lg:font-semibold bg-gradient-to-r from-green-500 to-green-300  hover:from-white hover:to-neutral-100
                             hover:via-neutral-300 duration-500  hover:text-gray-800'>
                                 Donate
                             </button>
-                            {/* <div className=' border w-44 mb-4 lg:mb-0 border-green-500 lg:w-80 h-0 items-center mt-2 lg:mt-6 '></div> */}
+
                         </div>
 
 
                     </div>
-
                 </div>
+                <Total_Donation/>
 
 
-                {/* <div className=' border border-green-500 mt-2 lg:w-[80%] lg:ml-8' ></div> */}
+               
 
-
-                {/* This is our Counter 3 div Section */}
-
-                <div className='    text-center font-bold grid justify-items-center items-center  '>
-                    <div className=' grid-cols-1   h-96  w-[450px]  text-center grid justify-center justify-items-center lg:mr-4 lg:ml-4  lg:h-36   lg:grid-cols-3 lg:w-[95%] lg:gap-2  '>
-                        {
-                            money.map((item) => {
-                                const { dollar, project } = item;
-                                return (
-                                    <>
-                                        <section className=' text-white bg-gradient-to-r from-green-500 to-green-300 w-[450px] md:w-[600px]  lg:h-32 lg:w-[310px] mt-2  grid items-center  rounded-xl  ' >
-                                            <div className=' font-bold text-4xl'>{dollar} <br></br>
-                                                <span className=' font-normal  text-sm'>{project}</span></div>
-                                        </section>
-                                    </>
-                                )
-                            })
-                        }
-
-                    </div>
-
-
-                </div>
-                {/* <div className=' border border-green-500 mt-2 lg:w-[1280px] lg:ml-8' ></div> */}
+                
 
 
 
+                <div className=' grid grid-cols-1 mt-4 justify-items-center'>
+                
+                    <section className=' h-80 w-[450px] bg-gradient-to-r from-green-500 to-green-300 via-green-200   rounded-xl md:w-[600px] lg:h-64 lg:w-[95%]  '>
 
-                <div className=' grid grid-cols-1 mt-4 justify-items-center      '>
-                    {/* <div className=' ml-4 lg:grid lg:justify-items-end lg:mr-4 '>
-                        <img src={image} className='h-[180px] w-[450px] rounded lg:h-[273px] lg:w-[550px] lg:rounded ' />
-                        <button className=' h-16 w-[450px] rounded mt-2 mb-2 bg-indigo-800 hover:bg-indigo-500 text-white  lg:h-[98px] lg:w-[550px] lg:mb-0 lg:text-4xl lg:font-serif font-bold '>GoFundMe </button>
+                        <div className=' h-[250px] grid  lg:grid lg:grid-cols-3 lg:h-48 lg:w-auto   lg:justify-items-center '>
 
-                    </div>  */}
-
-
-
-                    <section className=' h-80 w-[450px] bg-gradient-to-r from-green-500 to-green-300 via-green-200   rounded-xl md:w-[600px] lg:h-64 lg:w-[95%] lg:ml-8 '>
-
-                        <div className=' h-[250px]    lg:mr-10 lg:grid lg:grid-cols-3 lg:h-48 lg:w-auto   lg:justify-items-center  lg:items-center '>
-                            
                             <div className=''>
                                 <div className='flex mt-2 ml-2 lg:ml-10 lg:text-xl '>
                                     <div className=' h-7 w-7 rounded-full border border-black text-center lg:mt-1'>1</div>
@@ -121,13 +93,13 @@ const HeroSection = () => {
 
 
 
-                <section className=' w-screen grid justify-center  lg:h-fit lg:w-fit  '>
+                <section className=' w-[100%]  lg:h-fit lg:w-fit '>
 
 
-                    <div className='text-green-500  px-4 md:px-0'>
-                        <div className=' font-bold mt-2 mb-2 lg:ml-24  lg:mt-4' >Happening near you</div>
-                        <span className='  font-bold text-4xl mt-2 mb-2 w-52 lg:w-[300px] lg:ml-24 lg:mt-4'>Fundraiser In Your Community</span>
-                        <div className=' h-fit w-[450px]  lg:h-fit  lg:w-screen md:w-[100%] md:gap-8  md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 lg:justify-items-center text-gray-800 lg:mt-4 mb-4 '>
+                    <div className='text-green-500   lg:w-screen grid justify-items-center'>
+                        <div className=' font-bold mt-2 mb-2   lg:mt-4' >Happening near you</div>
+                        <span className='  font-bold text-4xl mt-2 mb-2 w-52 lg:w-[300px]  lg:mt-4'>Fundraiser In Your Community</span>
+                        <div className=' h-fit w-[450px] text-gray-800 md:w-[95%]  lg:h-fit   md:gap-4   md:grid md:grid-cols-2 lg:grid lg:grid-cols-3 lg:w-[90%] lg:mt-4 mb-4 lg:justify-items-center '>
                             {
 
                                 fund.map((funde) => {
@@ -135,10 +107,10 @@ const HeroSection = () => {
                                     return (
                                         <>
                                             {
-                                                names.toLowerCase().slice(0, 2) == query.toLowerCase().slice(0, 2) || title.toLowerCase().slice(0, 2) == query.toLowerCase().slice(0, 2) ?
+                                                names.toLowerCase() == query.toLowerCase() || title.toLowerCase() == query.toLowerCase() ?
 
                                                     <Link to={link}>
-                                                        <section key={id} className="mt-6 p-2 lg:mb-0 rounded-t-2xl  mb-2 border  cursor-pointer md:w-[360px] lg:h-[470px] lg:w-[360px]  bg-gradient-to-r from-green-500 to-green-300 via-green-200 hover:from-green-500 hover:to-green-700  rounded-2xl">
+                                                        <section key={id} className="mt-6 p-2 lg:mb-0 rounded-t-2xl  mb-2 border  cursor-pointer md:w-[360px] lg:h-[470px] lg:w-[340px]  bg-gradient-to-r from-green-500 to-green-300 via-green-200 hover:from-green-500 hover:to-green-700  rounded-2xl">
                                                             <img src={poster} className='w-[424px] ml-1 lg:ml-0 lg:w-auto rounded-t-xl hover:scale-105 hover:ease-in-out  hover:duration-500' />
                                                             <h1 className='m-2 font-bold lg:mt-6'>{title} </h1>
                                                             <p className='m-2 mt-4 font-normal  '>{description} </p>

@@ -2,8 +2,17 @@ import React, { useState } from 'react'
 import Button from '../Components/Button'
 import logo from '../Assets/newLogo.png'
 import { Link } from 'react-router-dom'
+import JSONDATA from "./search_data.json"
 import { useGlobalContext } from './Context'
+import Suggestion_Box from './Suggestion_Box'
+
 const Navbar = () => {
+
+
+
+
+
+
     let Links = [
         {
             name: "How it works", link: "/"
@@ -17,7 +26,7 @@ const Navbar = () => {
                 {
                     Head: "Equity Funding",
                     sublinks: [
-                        { title: "Working", link: "/" },
+                        { title: "Working", link: "/working" },
                         { title: "Startup", link: "/" },
 
 
@@ -46,9 +55,14 @@ const Navbar = () => {
 
     ];
     let [open, setOpen] = useState(false);
-    const { query, setQuery } = useGlobalContext();
+    const { query, setQuery, fund } = useGlobalContext();
 
-    // const [dropdown, setDropDown] = useState(false);
+
+
+
+
+
+
     return (
         <>
             <div className=' shadow-md w-full top-0  bg-gray-800 left-0 border border-green-500  hover:shadow-md  hover:shadow-indigo-700 hover:border hover:border-indigo-700'>
@@ -56,10 +70,10 @@ const Navbar = () => {
                 <div className=' w-full flex items-center justify-items-center  p-5 py-2 lg:px-10  h-auto   md:p-2    md:justify-between   lg:w-screen lg:justify-between '>
 
 
-                    <div className=' h-4 w-24 mb-10 cursor-pointer md:h-4 md:w-16 grid sm:items-center sm:justify-center '>
-                        <Link to='/'>
-                            <span className=' text-3xl text-indigo-600 mr-1 mt-2 md:mr-0'>
-                                <img src={logo} className="md:mt-3 " alt="Logo" />
+                    <div className=' h-4 w-24 mb-10  cursor-pointer md:h-4 md:w-24 grid sm:justify-items-center sm:justify-center '>
+                        <Link to='/' className='grid items-center' >
+                            <span className=' text-3xl text-indigo-600 mr-1 mt-2 md:mr-0 '>
+                                <img src={logo}  alt="Logo" />
                             </span>
                         </Link>
                     </div>
@@ -72,21 +86,27 @@ const Navbar = () => {
                     {/* Search Section */}
 
 
+                    <div className='justify-items-center grid'>
+                        <div className=' ml-6 lg:mr-0 md:ml-2 lg:mt-0 rounded-full border  hover:border-green-400 hover:border-2 items-center  cursor-pointer bg-white flex w-fit h-fit  lg:h-auto lg:w-auto  '>
 
-                    <div className=' ml-6 lg:mr-0 md:ml-2 lg:mt-0 rounded-full border  hover:border-green-400 hover:border-2 items-center  cursor-pointer bg-white flex w-fit h-fit  lg:h-auto lg:w-auto  '>
-
-                        <div className='m-2  grid items-center '><ion-icon name="search-outline"></ion-icon></div>
-                        <div>
-                            <input type="text" placeholder=" Search Here" className=' w-[180px] h-[28px]  rounded-lg  outline-none border-none lg:w-[200px] md:w-[130px] md:h-[28px] lg:rounded-xl'
-                                value={query}
-                                onChange={(e) => setQuery(e.target.value)} />
+                            <div className='m-2  grid items-center '><ion-icon name="search-outline"></ion-icon></div>
+                            <div className=''>
+                                <input type="text" placeholder=" Search Here" className=' w-[180px] h-[28px]  rounded-lg  outline-none border-none lg:w-[200px] md:w-[130px] md:h-[28px] lg:rounded-xl'
+                                    value={query}
+                                    onChange={(e) => setQuery(e.target.value)}
+                                />
+                            </div>
                         </div>
 
-
+                       <Suggestion_Box/>
 
                     </div>
 
-                    <ul className={`md:flex md:items-center   md:pb-0 pb-12 absolute md:static bg-gray-800 h-80 w-full left-0 md:w-auto md:h-auto md:pl-0  transition-all duration-700 ease-in ${open ? 'top-[60px] opacity-100' : 'top-[-490px]'} md:opacity-100 `}>
+
+
+
+
+                    <ul className={`md:flex md:items-center   md:pb-0 pb-12 absolute md:static bg-gray-800 h-80 w-full left-0 md:w-auto md:h-auto md:pl-0  transition-all duration-700 ease-in ${open ? 'top-[75px] opacity-100' : 'top-[-490px]'} md:opacity-100 `}>
                         {
                             Links.map((item) => {
                                 return (
@@ -144,9 +164,12 @@ const Navbar = () => {
                         </Button>
                     </ul>
 
+
                 </div>
 
+
             </div>
+
 
 
 
