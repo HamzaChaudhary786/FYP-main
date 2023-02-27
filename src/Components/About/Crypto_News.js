@@ -21,7 +21,7 @@ const Crypto_News = () => {
 
     return (
         <>
-            <div className='flex items-center  '>
+            <div className='flex items-center  w-[100%] justify-items-center pl-2 pr-2'>
                 <div className='grid items-center justify-items-center text-4xl opacity-50 hover:opacity-100 text-white cursor-pointer  '><ion-icon name="caret-back-outline" onClick={SlideLeft}></ion-icon></div>
 
                 <div className='flex relative items-center gap-6  w-full h-full overflow-x-scroll scroll ease-in-out duration-1000  scroll-smooth scrollbar-hide' id='slide'>

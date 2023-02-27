@@ -7,9 +7,9 @@ const Flood_Hero_Section = () => {
 
   return (
     <>
-      <div className=''>
-        <section className='h-fit w-[450px] text-green-500 ml-4 rounded lg:mt-0 lg:w-[1100px] '>
-          <div className='lg:grid lg:grid-cols-3 text-gray-800 lg:justify-items-start lg:gap-x-14 lg:mt-4 mb-4 '>
+      <div className=' grid justify-items-center items-center'>
+        <section className='h-[100%] w-[95%]   rounded lg:mt-2  '>
+          <div className='grid justify-items-center items-center md:grid-cols-2 lg:grid-cols-3 text-gray-800    gap-4'>
             {
               fund.map((floody) => {
                 const { id, title, description, value, poster, names } = floody;
@@ -19,9 +19,9 @@ const Flood_Hero_Section = () => {
                     {
                        names.toLowerCase().slice(0,2) == query.toLowerCase().slice(0,2) || title.toLowerCase().slice(0,2) == query.toLowerCase().slice(0,2)  ?
 
-                        <Link to={query.value}>
-                          <section key={id} className="mt-2 p-2 lg:mb-0 rounded-t-2xl  mb-2 border  cursor-pointer lg:h-[470px] lg:w-[360px] lg:ml-24 bg-gradient-to-r from-green-500 to-green-300 via-green-200 hover:from-green-500 hover:to-green-700  rounded-2xl">
-                            <img src={poster} className='w-[424px] ml-1 lg:ml-0 lg:w-auto rounded-t-xl hover:scale-105 hover:ease-in-out  hover:duration-500' />
+                        <Link to={query.value} className=" p-2  rounded-t-2xl   border  cursor-pointer h-[100%] w-[86%] bg-gradient-to-r from-green-500 to-green-300 via-green-200 hover:from-green-500 hover:to-green-700  rounded-2xl">
+                          <section key={id} >
+                            <img src={poster} className='w-auto  lg:w-auto rounded-t-xl hover:scale-105 hover:ease-in-out  hover:duration-500' />
                             <h1 className='m-2 font-bold lg:mt-6'>{title} </h1>
                             <p className='m-2 mt-4 font-normal  '>{description} </p>
 
