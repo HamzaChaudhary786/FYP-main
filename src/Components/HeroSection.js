@@ -99,57 +99,55 @@ const HeroSection = () => {
 
 
 
-                <section className=' w-[95%] h-auto'>
 
 
-                    <div className='text-green-500  grid justify-items-center'>
+                <div className='text-green-500  w-[100%] grid justify-items-center'>
 
-                        <div className=' font-bold mt-2 mb-2   lg:mt-4' >Happening near you</div>
-                        <span className='  font-bold text-4xl mt-2 mb-2 w-52 lg:w-[300px]  lg:mt-4'>Fundraiser In Your Community</span>
+                    <div className=' font-bold mt-2 mb-2   lg:mt-4' >Happening near you</div>
+                    <span className='  font-bold text-4xl mt-2 mb-2 w-52 lg:w-[300px]  lg:mt-4'>Fundraiser In Your Community</span>
 
-                        <div className=' w-[95%] text-gray-800 h-fit      md:grid md:grid-cols-2 lg:grid lg:grid-cols-3  lg:mt-4 justify-items-center gap-4'>
-                            {
+                    <div className=' w-[95%] text-gray-800 h-fit grid md:grid-cols-2  lg:grid-cols-3  lg:mt-4 justify-items-center gap-4'>
+                        {
 
-                                fund.map((funde) => {
-                                    const { id, title, description, value, poster, link, names } = funde;
-                                    return (
-                                        <>
-                                            {
-                                                names.toLowerCase() == query.toLowerCase() || title.toLowerCase() == query.toLowerCase() ?
+                            fund.map((funde) => {
+                                const { id, title, description, value, poster, link, names } = funde;
+                                return (
+                                    <>
+                                        {
+                                            names.toLowerCase() == query.toLowerCase() || title.toLowerCase() == query.toLowerCase() ?
 
-                                                    <Link to={link}>
-                                                        <section key={id} className="mt-6 p-2 lg:mb-0 rounded-t-2xl  mb-2 border  cursor-pointer h-[100%] w-auto  bg-gradient-to-r from-green-500 to-green-300 via-green-200 hover:from-green-500 hover:to-green-700  rounded-2xl">
-                                                            <img src={poster} className='w-[424px] ml-1 lg:ml-0 lg:w-auto rounded-t-xl hover:scale-105 hover:ease-in-out  hover:duration-500' />
-                                                            <h1 className='m-2 font-bold lg:mt-6'>{title} </h1>
-                                                            <p className='m-2 mt-4 font-normal  '>{description} </p>
+                                                <Link to={link} className="grid justify-items-center">
+                                                    <section key={id} className="mt-6 p-2 lg:mb-0 rounded-t-2xl  mb-2 border  cursor-pointer h-[100%] w-[95%] bg-gradient-to-r from-green-500 to-green-300 via-green-200 hover:from-green-500 hover:to-green-700  rounded-2xl grid justify-items-center">
+                                                        <img src={poster} className='  w-[95%] rounded-t-xl hover:scale-105 hover:ease-in-out  hover:duration-500' />
+                                                        <h1 className='m-2 font-bold lg:mt-6'>{title} </h1>
+                                                        <p className='m-2 mt-4 font-normal  '>{description} </p>
 
-                                                            <div className='w-[100%] border-2 border-black rounded-r-lg'>
-                                                                <div className={`bg-indigo-400 h-4 text-center rounded-r-lg text-xs`}
-                                                                    style={{
-                                                                        opacity: 1,
-                                                                        width: `${value}%`
-                                                                    }}
-                                                                >
-                                                                    {value}%
+                                                        <div className='w-[100%] border-2 border-black rounded-r-lg'>
+                                                            <div className={`bg-indigo-400 h-4 text-center rounded-r-lg text-xs`}
+                                                                style={{
+                                                                    opacity: 1,
+                                                                    width: `${value}%`
+                                                                }}
+                                                            >
+                                                                {value}%
 
-                                                                </div>
                                                             </div>
-                                                        </section>
-                                                    </Link>
+                                                        </div>
+                                                    </section>
+                                                </Link>
 
-                                                    :
-                                                    console.log(names)
-                                            }
-                                        </>
-                                    )
+                                                :
+                                                console.log(names)
+                                        }
+                                    </>
+                                )
 
-                                })
+                            })
 
-                            }
-                        </div>
-
+                        }
                     </div>
-                </section>
+
+                </div>
 
 
 

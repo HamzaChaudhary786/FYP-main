@@ -37,7 +37,7 @@ const Button = (props) => {
 
   return (
     <>
-      <button className=' text-gray-800  hover:text-white py-1 px-6 md:px-1 ml-6 rounded md:ml-8 bg-gradient-to-r from-green-500 to-green-300 hover:from-indigo-600 hover:to-indigo-400 duration-500 ' onClick={MetaMask} id="meta">
+      <button className=' text-gray-800  hover:text-white text-base w-[15%] py-1 px-6 md:py-0 md:px-1 ml-6 md:ml-0 h-12 rounded bg-gradient-to-r from-green-500 to-green-300 hover:from-indigo-600 hover:to-indigo-400 duration-500 ' onClick={MetaMask} id="meta">
         {props.children}
 
 

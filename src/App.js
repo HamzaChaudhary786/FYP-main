@@ -10,6 +10,7 @@ import Sign_In from './Pages/Sign_In';
 import Sign_Up from './Pages/Sign_Up';
 import Cancer from './Pages/Cancer';
 import Working from './Pages/Working';
+import HowItsWork from './Pages/HowItsWork';
 
 
 function App() {
@@ -18,6 +19,8 @@ function App() {
 
       <Routes >
         <Route path='/' element={<Home />} />
+        <Route path='/work' element={<HowItsWork />} />
+
         <Route path='/aboutus' element={<About />} />
         <Route path='/aboutdescription' element={<DeveloperAbout />} />
         <Route path='/floods' element={<Floods />} />
